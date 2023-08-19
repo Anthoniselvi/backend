@@ -22,8 +22,10 @@ app.use("/events", eventsRoutes);
 app.use("/entries", entriesRoutes);
 
 const PORT = process.env.PORT || 3000;
+const URI =
+  "mongodb+srv://moiapp:moiapp@cluster0.mfakqrd.mongodb.net/?retryWrites=true&w=majority";
 mongoose
-  .connect(process.env.MONGO_URL, {
+  .connect(URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
